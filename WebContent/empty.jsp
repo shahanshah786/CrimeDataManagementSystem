@@ -21,7 +21,7 @@
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0 ;
-  background-image: url('world.jpeg'); 
+  background-image: url('Baground.jpg'); 
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -31,7 +31,7 @@
 
 
 .navbar {
-  background-color: yellow;
+   background-image:linear-gradient(to right, #00bfff, #00ffd5);
   overflow: hidden;
   margin: 0;
   padding: 0;

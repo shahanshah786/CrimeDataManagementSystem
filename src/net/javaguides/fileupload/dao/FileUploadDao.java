@@ -7,9 +7,9 @@ public class FileUploadDao {
 
 	  private static final String url = "jdbc:mysql://localhost:3306/addcriminal";
 	  private static final String user = "root";
-	  private static final String password = "Shahnshah@123md#";
+	  private static final String password = "shahnshah@786MD";
 
-	  private static final String sql = "INSERT INTO form(firstname,lastname,fathername,mothername,phone,age,religion,gender,fir_date,cases,region,address,picture) values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	  private static final String sql = "INSERT INTO data(firstname,lastname,fathername,mothername,phone,age,religion,gender,fir_date,cases,region,address,picture) values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
       
     public int uploadFile(String firstname, String lastname, String fathername, String mothername,String phone,String age,String religion,String gender,String fir_date,String cases, String region, String address,String picture) {
         int row = 0;

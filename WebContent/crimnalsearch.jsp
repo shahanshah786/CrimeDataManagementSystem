@@ -15,7 +15,7 @@
 
     <div class="container">
         <header>
-            <h1 style="color: brown; margin-top:10px;"><b>CRIMINAL SEARCH BY DETAILS</b></h1>
+            <h1 style="color: yellow; margin-top:10px;"><b>CRIMINAL SEARCH BY DETAILS</b></h1>
         </header>
         <img src="images.png" alt="Image">
 
@@ -40,36 +40,8 @@
         <style>
         
         
-        /*
-            body {
-    background-image: url(world.jpeg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    font-family: Arial, Helvetica, sans-serif;
- }
+        
 
-
- .navbar {
-    background-color: yellow;
-    overflow: hidden;
-    margin-top: 0;
-
- }
-
-.navbar a {
-float: left;
-font-size: 16px;
-color: black;
-text-align: center;
-padding: 14px 16px;
-text-decoration: none;
-}
-.navbar a:hover {
-
-    background-color: rgb(59, 19, 180);
-}
-
-*/
 
 .container {
     max-width: 600px;
@@ -77,7 +49,7 @@ text-decoration: none;
     padding: 40px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    background-image: url('facehero.jpg');
+    background-image: url('Baground.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -265,7 +237,7 @@ input[type="file"] {
 
 
 .navbar {
-        background-color: yellow;
+   background-image:linear-gradient(to right, #00bfff, #00ffd5);
         overflow: hidden;
         position: fixed; /* Fixed position to stay at the top */
         width: 100%; /* Make it full width */
@@ -289,7 +261,7 @@ input[type="file"] {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background-image: url('world.jpeg');
+        background-image: url('Baground.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;

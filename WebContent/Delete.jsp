@@ -11,7 +11,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('world.jpeg');
+            background-image: url('Baground.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -19,7 +19,7 @@
         }
 
         .navbar {
-            background-color: yellow;
+            background-image:linear-gradient(to right, #00bfff, #00ffd5);
             overflow: hidden;
         }
 
@@ -35,28 +35,35 @@
         .navbar a:hover {
             background-color: rgb(59, 19, 180);
         }
+        
+        
+        .delete {
+          margin-left:400px;
+         color:yellow;
+         }
+         .container {
+            margin-top:50px;
+          }
+         
     </style>
+    
+    
 </head>
 <body>
 <div class="navbar">
     <a href="findcrimnal.jsp" class="home-link"><i class="fa fa-home">HOME</i></a>
 </div>
 
-<h1 style="color:brown; text-align:center; background-color:white" required>Delete Data</h1>
+<div class="container">
 <form action="DataDeleteServlet" method="post">
     <label class="delete" for="id">ENTER YOUR ID</label>
     
     <input type="text" name="id" id="id">
     <input type="submit" value="Delete">
 </form>
+</div>
 
-<style>
-.delete {
-margin-left:400px;
-color:yellow;
 
-}
-</style>
 </body>
 </html>
 

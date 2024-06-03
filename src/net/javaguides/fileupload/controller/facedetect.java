@@ -1,7 +1,5 @@
 package net.javaguides.fileupload.controller;
 
-import java.awt.Graphics2D;
-import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -9,7 +7,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -17,8 +14,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
-
-import org.omg.CORBA.portable.InputStream;
 
 /**
  * Servlet implementation class facedetect
@@ -72,20 +67,7 @@ public class facedetect extends HttpServlet {
             Connection con = DriverManager.getConnection(connectionString, username, password);
             String query = "SELECT * FROM form WHERE picture=?" ;
             PreparedStatement stmt = con.prepareStatement(query);
-            stmt.setString(1, picture);
-            
-            java.io.InputStream fileContent = file.getInputStream();
-            BufferedImage image = ImageIO.read(fileContent);
-
-            int imageWidth = image.getWidth();
-            int imageHeight = image.getHeight();
-
-            BufferedImage bufferedImage = new BufferedImage(imageWidth, imageHeight, BufferedImage.TYPE_INT_RGB);
-
-            Graphics2D g2 = bufferedImage.createGraphics();
-            g2.drawImage(image, 0, 0, null); // Replace 'this' with 'null' as this is not a component
-            
-            
+            stmt.setString(1, picture);       
             
             ResultSet rs = stmt.executeQuery();
 

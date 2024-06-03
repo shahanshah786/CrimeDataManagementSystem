@@ -1,29 +1,25 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta charset="UTF-8">
-<title>ADDCRIMINAL</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"> 
-    <link rel="stylesheet" href="file.jsp">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>USerInsertNEWCase</title>
 </head>
 <body>
 <div class="navbar">
-        <a href="findcrimnal.jsp" class="home-link"><i class="fa fa-home">HOME</i></a>
+        <a href="UserPage.jsp" class="home-link"><i class="fa fa-home">HOME</i></a>
     </div>
     <div class="container">
         <header>
-            <h1 style="color: yellow; margin-top:20px;"><b>CRIME INFORMATION DETAILS</b></h1>
+            <h1 style="color: yellow; margin-top:20px;"><b>FIR REPORT</b></h1>
         </header>
         <img src="images.png" alt="Image">
-        <form action="<%= request.getContextPath()%>/register" enctype="multipart/form-data" method="post" id="yourFormId" > 
-            <label for="firstname" style="color: yellow;" >CRIMINAL FIRST NAME:</label>
+        <form action="newuseraddcase" method="post" id="yourFormId" > 
+            <label for="firstname" style="color: yellow;" >YOUR NAME:</label>
             <input type="text" id="firstname" name="firstname" required>
-            <label for="lastname" style="color: yellow;">CRIMINAL LAST NAME:</label>
-            <input type="text" id="lastname" name="lastname"   >
+            <label for="lastname" style="color: yellow;"> CRIMINAL NAME:</label>
+            <input type="text" id="lastname" name="name"   >
             
             <label for="fathername" style="color: yellow;">CRIMINAL FATHER NAME:</label>
             <input type="text" id="fathername" name="fathername"   >
@@ -31,21 +27,21 @@
             <label for="mothername" style="color: yellow;">CRIMINAL MOTHER NAME:</label>
             <input type="text" id="mothername" name="mothername"   >
             
-            <label for="phone" style="color: yellow;">PHONE NUMBER:</label>
-            <input type="text" maxlength="10" pattern="\d{10}" title="Please enter exactly 10 digits" required  >
+            <label for="phone" style="color: yellow;">YOUR NUMBER:</label>
+            <input type="text"  name="phone" maxlength="10" pattern="\d{10}" title="Please enter exactly 10 digits" required  >
             
             <label  for="age" style="color: yellow;" >CRIMINAL DOB</label> 
             <input class="age" type="date" id="age" name="age" required >
             
             
-            <label for="religion" style="color: yellow;">RELIGION</label>
+            <label for="religion" style="color: yellow;"> CRIMNAL RELIGION</label>
             <select id="gender" name="religion">
  						 <option value="muslim">MUSLIM</option>
   						<option value="hindu">HINDU</option>
 						 <option value="others">OTHERS</option>
 			</select>
               
-            <label for="gender" style="color: yellow;">GENDER</label>
+            <label for="gender" style="color: yellow;">CRIMINAL GENDER</label>
             <select id="gender" name="gender">
  						 <option value="male">MALE</option>
   						<option value="female">FEMALE</option>
@@ -56,62 +52,54 @@
             <input class="date" type="date" id="fir_date" name="fir_date"  >
 			
 			
-			<label for="cases" id="label" style="color: yellow;" >CASE</label>
+			<label for="cases" id="label" style="color: yellow;" >CASE TYPES</label>
 					<select id="cases" name="cases" required id="caseDropdown">
-  					<option style="color: green;" value="active">ACTIVE</option>
- 					 <option style="color: red; display:none;" value="close">CLOSE</option>
-  					<option style="color: blue;" value="pending">PENDING</option>
+  					<option style="color: green;" >Theft CASE</option>
+  					<option style="color: blue;" >Fight Case</option>
+  					<option style="color: blue;" >Other</option>
 				</select>
 
-			<label for="reasion" style="color: yellow;" id="crimeRegionLabel">CRIME REGION</label>
-			<textarea  name="region" 10000words id="crimeRegion"></textarea>
+
+			<label for="reasion" style="color: yellow;">CASE REGION</label>
+			<textarea  name="region"></textarea>
             
-            <label for="address" style="color: yellow;">ADDRESS</label>
-            <textarea id="address" name="address"1000word ></textarea>
-
-            <label for="profilepic1" class="hello" style="color: yellow;">CRIMINAL FULL PICTURE</label>
-            <div class="container2">
-            <input type="file" id="file" name="picture" accept="image/*" hidden>
-            <div class="img-area" data-img="" style="background-color: aliceblue;">
-                <i class='bx bxs-cloud-upload icon'></i>
-                <h3 class="select">CLICK HERE</h3>
-                <p>Image size must be less than <span>2MB</span></p>
+            <label for="address" style="color: yellow;">YOUR ADDRESS</label>
+            <textarea id="address" name="Youraddress" ></textarea>
+            
+             <label for="address" style="color: yellow;">CRIMNAL ADDRESS</label>
+            <textarea id="address" name="Crimnaladdress" ></textarea>
+            
+         <label for="religion" style="color: yellow;">REQUEST WAIT</label>
+            <select id="gender" name="request_wait">
+ 						 <option value="waiting">WAITING</option>
+			</select>   
+			
+            <button type="submit" >ADD INFORMATION</button>   
+            
+            </form>
+                
             </div>
-        </div>
-        <br>
-            <button type="submit" >ADD INFORMATION</button>
-        </form>
-    </div>
+     
 
-    <script>
-        const selectImage = document.querySelector('.select');
-        const inputFile = document.querySelector('#file');
-        const imgArea = document.querySelector('.img-area');
 
-        selectImage.addEventListener('click', function () {
-	      inputFile.click();
-        })
 
-        inputFile.addEventListener('change', function () {
-	    const image = this.files[0]
-	   if(image.size < 2000000) {
-		    const reader=new FileReader();
-		    reader.onload=()=> {
-			const allImg = imgArea.querySelectorAll('img');
-			allImg.forEach(item=> item.remove());
-			const imgUrl = reader.result;
-			const img = document.createElement('img');
-			img.src = imgUrl;
-			imgArea.appendChild(img);
-			imgArea.classList.add('active');
-			//imgArea.dataset.img = image.name;
-		}
-		reader.readAsDataURL(image);
-	    } else {
-		alert("Image size more than 2MB");
-	    }
-        })
-    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <style>
     
@@ -122,10 +110,8 @@
 }
 @media screen and (max-width:600px) {
     .sign{
-        text-align: center;
-        
-    }
-    
+        text-align: center;       
+    }  
 }
 .age {
     padding: 10px 10px;
@@ -374,37 +360,14 @@ button:hover {
     
     
     <style>
-  /* Add this CSS to hide the label and textarea by default */
+  
   #crimeRegionLabel,
   #crimeRegion {
     display: none;
   }
 </style>
     
-    <script>
-  const caseDropdown = document.getElementById('cases');
-  const crimeRegionLabel = document.getElementById('crimeRegionLabel');
-  const crimeRegion = document.getElementById('crimeRegion');
 
-  // Function to toggle visibility
-  function toggleCrimeRegion() {
-    if (caseDropdown.value === "pending") {
-      crimeRegionLabel.style.display = 'none';
-      crimeRegion.style.display = 'none';
-    } else {
-      crimeRegionLabel.style.display = 'block';
-      crimeRegion.style.display = 'block';
-    }
-  }
 
-  // Initial call to set the initial state based on the dropdown's initial value
-  toggleCrimeRegion();
-
-  // Add an event listener to listen for changes in the dropdown
-  caseDropdown.addEventListener('change', toggleCrimeRegion);
-</script>
-
-    
 </body>
-
 </html>

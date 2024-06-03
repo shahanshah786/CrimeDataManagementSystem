@@ -16,14 +16,14 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class AllDataRecord
  */
-@WebServlet("/AllDataRecord")
-public class AllDataRecord extends HttpServlet {
+@WebServlet("/countrycase")
+public class countrycase extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AllDataRecord() {
+    public countrycase() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -67,11 +67,13 @@ public class AllDataRecord extends HttpServlet {
                 out.println("<link rel='stylesheet' href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css>");
                 out.println("<style>");
                 out.println("  .container { text-align: center; }");
+                out.println("  .container h1 { text-align: center; color:yellow; }");
+                out.println("  body {background-image:url(Baground.jpg);background-size: cover; background-repeat:no-repeat; width: 100%; margin: 0; padding: 0;}");
                 out.println("  .navbar {background-image:linear-gradient(to right, #00bfff, #00ffd5);padding: 10px; width: 400%; }");
                 out.println("  .navbar ul { list-style: none; margin: 0; padding: 0; }");
                 out.println("  .navbar li { display: inline; margin-right: 20px; }");
                 out.println("  .navbar a { text-decoration: none; color: black; font-size: 18px; }");
-                out.println("  .table-container { margin: 20px; }");
+                out.println("  .table-container { margin: 20px; background-color:white;}");
                 out.println("</style>");
                 out.println("</head>");
                 out.println("<body>");
@@ -79,7 +81,7 @@ public class AllDataRecord extends HttpServlet {
                 // Navbar
                 out.println("<div class='navbar'>");
                 out.println("<ul>");
-                out.println("<li><a href='findcrimnal.jsp'><i class='fa fa-home'></i> Home</a></li>");
+                out.println("<li><a href='UserPage.jsp'><i class='fa fa-home'></i> Home</a></li>");
                 out.println("</ul>");
                 out.println("</div>");
 

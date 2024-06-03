@@ -34,7 +34,7 @@ public class DataFetchServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
 	}
 
 	/**
@@ -54,12 +54,12 @@ public class DataFetchServlet extends HttpServlet {
 
         String connectionString = "jdbc:mysql://localhost:3306/addcriminal";
         String username = "root";
-        String password = "Shahnshah@123md#";
+        String password = "shahnshah@786MD";
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection(connectionString, username, password);
-            String query = "SELECT * FROM form WHERE firstname=? AND lastname=? AND phone=? AND age=?" ;
+            String query = "SELECT * FROM data WHERE firstname=? AND lastname=? AND phone=? AND age=?" ;
             PreparedStatement stmt = con.prepareStatement(query);
             stmt.setString(1, firstname);
             stmt.setString(2, lastname);
@@ -78,7 +78,7 @@ public class DataFetchServlet extends HttpServlet {
                 out.println("<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>");
                 out.println("<style>");
                 out.println("  .container { text-align: center; }");
-                out.println("  .navbar { background-color: yellow; padding: 10px; width:400%; }");
+                out.println("  .navbar {   background-image:linear-gradient(to right, #00bfff, #00ffd5); padding: 10px; width:400%; }");
                 out.println("  .navbar ul { list-style: none; margin: 0; padding: 0; }");
                 out.println("  .navbar li { display: inline; margin-right: 20px; }");
                 out.println("  .navbar a { text-decoration: none; color: black; font-size: 18px; }");
