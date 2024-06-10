@@ -32,7 +32,7 @@
             <input type="text" id="mothername" name="mothername"   >
             
             <label for="phone" style="color: yellow;">PHONE NUMBER:</label>
-            <input type="text" maxlength="10" pattern="\d{10}" title="Please enter exactly 10 digits" required  >
+            <input type="text" id="phone" name="phone" maxlength="10" pattern="\d{10}" title="Please enter exactly 10 digits" required  >
             
             <label  for="age" style="color: yellow;" >CRIMINAL DOB</label> 
             <input class="age" type="date" id="age" name="age" required >
